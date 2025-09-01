@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-jetbrains: "JetBrains Mono", monospace;
+}
+
+body {
+  font-family: var(--font-jetbrains);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fix for font width inconsistencies */
+.font-jetbrains {
+  font-feature-settings: "calt" 0, "liga" 0;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+.social-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.social-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .font-jetbrains {
+    font-size: 14px;
+  }
+}
+
+code {
+  background-color: #f4f4f5;
+  /* padding: 0.2rem 0.4rem; */
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+::selection {
+  background-color: #1a1a1a;
+  color: #fff;
+}

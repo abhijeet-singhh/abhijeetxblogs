@@ -5,71 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhijeet's Blog</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-
-    .lora {
-      font-family: "Lora", serif;
-    }
-
-    .epunda {
-      font-family: "Epunda Slab", serif;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-orange-100 text-zinc-800">
+<body class="bg-white text-zinc-800 font-jetbrains">
   <div class="min-h-screen flex justify-center px-4 sm:px-6 lg:px-8 py-12">
-    <div class="w-full max-w-4xl">
+    <div class="w-full max-w-3xl">
 
       <!-- Header -->
-      <div class="flex flex-col sm:flex-row justify-between items-center mb-8">
-        <h1 class="text-4xl font-medium epunda text-amber-900">Abhijeet's Blog</h1>
-        <nav class="flex gap-6 mt-4 sm:mt-0 text-[15px] text-amber-950 font-medium">
-          <a href="#" class="hover:text-amber-800 transition duration-300">Home</a>
-          <a href="#" class="hover:text-amber-800 transition duration-300">Blogs</a>
+      <div class="flex flex-col sm:flex-row justify-between items-center mb-10">
+        <h1 class="text-4xl font-bold">Abhijeet's Blog</h1>
+        <nav class="flex gap-6 mt-4 sm:mt-0 text-md font-medium">
+          <a href="#" class="social-link transition duration-300">Home</a>
+          <a href="/blogs/blogs.html" class="social-link transition duration-300">Blogs</a>
         </nav>
       </div>
 
-      <hr class="mb-6 border-amber-700" />
+      <hr class="border-zinc-300 mb-10" />
 
       <!-- Intro -->
-      <section class="space-y-5 text-lg leading-relaxed">
-        <p>Hi, I'm <span class="font-semibold text-amber-950">Abhijeet Singh</span>.</p>
-        <p>I work across the stack — building interfaces, designing backend systems, and recently, digging deeper into DevOps.</p>
+      <section class="space-y-5 text-md leading-relaxed">
+        <p>Hi, I'm <span class="font-bold text-black">Abhijeet Singh</span>.</p>
+        <p>I work across the stack – building interfaces, designing backend systems, and recently, digging deeper into DevOps.</p>
         <p>I learn best by building things, exploring ideas, and figuring things out along the way.</p>
-        <p>This space is where I document what I explore — whether it's code, tools, ideas, or the occasional mistake worth remembering.</p>
+        <p>This space is where I document what I explore – whether it's code, tools, ideas, or the occasional mistake worth remembering.</p>
         <p>You'll usually find me somewhere between debugging and deployment.</p>
         <p>Or more realistically, right here:</p>
       </section>
 
-
-      <hr class="mt-5 border-amber-700" />
+      <hr class="border-zinc-300 my-6" />
 
       <!-- Social Links -->
-      <footer class="mt-5 flex gap-6 text-[15px] font-semibold">
+      <footer class="flex gap-8 text-md font-semibold">
         <a
           href="https://github.com/abhijeet-singhh"
           target="_blank"
-          class="hover:translate-x-1 hover:text-amber-900 transition duration-300"
+          class="social-link transition duration-300"
         >
           GitHub
         </a>
         <a
           href="https://www.linkedin.com/in/abhijeet-singhh"
           target="_blank"
-          class="hover:translate-x-1 hover:text-amber-900 transition duration-300"
+          class="social-link transition duration-300"
         >
           LinkedIn
         </a>
         <a
           href="https://twitter.com/abhijeet_tw"
           target="_blank"
-          class="hover:translate-x-1 hover:text-amber-900 transition duration-300"
+          class="social-link transition duration-300"
         >
           Twitter
         </a>

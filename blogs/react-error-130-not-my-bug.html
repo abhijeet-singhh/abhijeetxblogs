@@ -3,48 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Debugging a React Bug That Wasn't Mine</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Debugging a React Bug That Wasn't Mine: A Dev's Breakdown</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="A debugging story of how Brave browser and a Chrome extension caused a misleading React error. Learn how to avoid it with real dev tips." />
+  <meta name="author" content="Abhijeet" />
+  <meta name="keywords" content="React, debugging, Brave browser, web development, JavaScript, Vite, DevTools, extensions, frontend" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (for social sharing) -->
+  <meta property="og:title" content="Debugging a React Bug That Wasn't Mine" />
+  <meta property="og:description" content="How Brave browser and an extension gaslit me into debugging a React error that wasn't mine." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abhijeet-singhh.github.io/abhijeetxblogs/blogs/react-error-130-not-my-bug.html" />
+  <meta property="og:image" content="https://yourwebsite.com/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Debugging a React Bug That Wasn't Mine" />
+  <meta name="twitter:description" content="A debugging journey inside Brave browser. Spoiler: It wasn't my bug." />
+  <meta name="twitter:image" content="https://yourwebsite.com/og-image.png" />
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts and Styles -->
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Favicon (Optional) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="canonical" href="https://abhijeet-singhh.github.io/abhijeetxblogs/blogs/react-error-130-not-my-bug.html" />
+
 </head>
-<body class="bg-white text-zinc-800 px-6 py-12 max-w-4xl mx-auto leading-relaxed">
+<body class="bg-white text-zinc-800 px-6 py-12 max-w-4xl mx-auto leading-relaxed font-[JetBrains Mono], monospace">
+
+  <!-- Article Schema (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Debugging a React Bug That Wasn't Mine: A Dev's Breakdown",
+    "description": "A debugging story of how Brave browser and a Chrome extension caused a misleading React error. Learn how to avoid it with real dev tips.",
+    "author": {
+      "@type": "Person",
+      "name": "Abhijeet"
+    },
+    "datePublished": "2025-09-02",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Abhijeet's Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dummyimage.com/300x100/000/fff&text=Abhijeet"
+      }
+    }
+  }
+  </script>
 
   <!-- Title -->
   <h1 class="text-3xl sm:text-4xl font-bold mb-4">
     Debugging a React Bug That Wasn't Mine: A Dev's Breakdown
   </h1>
-
-  <!-- Tags -->
-  <div class="flex flex-wrap gap-2 text-sm text-zinc-500 mb-8">
-    <span class="bg-zinc-100 px-3 py-1 rounded-full">#react</span>
-    <span class="bg-zinc-100 px-3 py-1 rounded-full">#webdev</span>
-    <span class="bg-zinc-100 px-3 py-1 rounded-full">#debugging</span>
-    <span class="bg-zinc-100 px-3 py-1 rounded-full">#browsers</span>
-  </div>
+  <hr class="border-zinc-300 mb-10 mt-5">
 
   <!-- Blog Content -->
-  <article class="space-y-8 text-[15.5px] sm:text-base">
+  <article class="space-y-8 text-[15.5px] sm:text-base" role="article">
     
     <p>
-      Hey there! I'm Abhijeet, a dev who just spent an entire day pulling his hair out over a bug that turned out to be... not my bug at all. Grab some popcorn, maybe a debugger too, because this is the story of how Brave browser gaslit me and my console cried in minified.
+      Hey there! I'm Abhijeet, a dev who just spent an entire day pulling his hair out over a bug that turned out to be... <em>not my bug at all</em>. Grab some popcorn, maybe a debugger too, because this is the story of how Brave browser gaslit me and my console cried in minified.
     </p>
     <p>
       Let's dive into the rabbit hole, one console error at a time.
     </p>
 
-    <h2 class="text-xl font-semibold mt-10">Everything Was Fine... Until It Wasn't</h2>
+    <h2 class="text-xl font-bold mt-10">Everything Was Fine... Until It Wasn't</h2>
     <p>
       So I'm vibing, building this slick React project using Vite. Nothing fancy, just your average component soup with some nice icons sprinkled in.
     </p>
     <p>
       I deployed it on Netlify, excited to finally show it off. Opened it in Brave browser, loaded the app, and boom:
     </p>
-    <ul class="list-disc ml-6">
-      <li>🚨 Icons ghosted me.</li>
-      <li>🚨 Text went poof.</li>
-      <li>🚨 Console dropped this bomb: <code>Uncaught Error: Minified React error #130</code></li>
+    <ul class="flex items center gap-4 border-l-4 border-zinc-300 pl-4">
+      <code class="bg-zinc-100 p-1">🚨 Icons ghosted me.</code>
+      <code class="bg-zinc-100 p-1">🚨 Text went poof.</code>
+      <code class="bg-zinc-100 p-1">🚨 Console dropped this bomb:</code>
     </ul>
+    <pre class="bg-zinc-100 rounded p-4 font-semibold whitespace-normal">
+      <code>Uncaught Error: Minified React error #130</code>
+    </pre>
     <p>
       If you've ever seen this, you know React is basically saying:
     </p>
@@ -54,71 +103,76 @@
     <p>
       I clicked the link React provided and it told me:
     </p>
-    <pre class="bg-zinc-100 rounded p-4 text-sm whitespace-normal">
+    <pre class="bg-zinc-100 font-semibold rounded p-4 whitespace-normal">
       <code>Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined.</code>
     </pre>
     <p>
-      Translation: You're probably importing a component that doesn't exist. Classic. But I double-checked all my imports...
+      <b>Translation:</b> You're probably importing a component that doesn't exist. Classic. But I double-checked all my imports...
     </p>
-    <p>
-      Fun fact: This all went down while building <strong>FlickNest</strong> — a movie discovery app where you can search trending titles, explore binge-worthy shows, and keep up with the latest releases.
+    <p class="border-l-4 border-zinc-300 pl-4">
+      <b>Fun fact:</b> This all went down while building <strong>FlickNest</strong> — a movie discovery app where you can search trending titles, explore binge-worthy shows, and keep up with the latest releases.
     </p>
-    <blockquote class="border-l-4 border-zinc-300 pl-4 text-zinc-600 hover:underline">
+    <blockquote class="border-l-4 border-indigo-400 pl-4 text-zinc-600 hover:underline">
       <a href="https://flicknestapp.netlify.app/" target="_blank">🎬 <strong>FlickNest</strong> — Live link</a>
     </blockquote>
 
-    <h2 class="text-xl font-semibold mt-10">It Must Be the Icons</h2>
+    <h2 class="text-xl font-bold mt-10">It Must Be the Icons</h2>
     <p>
-      Naturally, I thought maybe I messed up icon imports. React #130 is infamous for this.
+      Naturally, I thought maybe I messed up icon imports. <code class="bg-zinc-100 p-1">React #130</code> is infamous for this.
     </p>
-    <pre class="bg-zinc-100 rounded p-4 text-sm overflow-x-auto"><code>
+    <pre class="bg-zinc-100 rounded p-4 font-semibold overflow-x-auto"><code>
 import { FaXTwitter } from "react-icons/fa6"; // ✅
     </code></pre>
     <p>Still the error stayed, and so did my growing headache.</p>
     <p>
-      I swapped out <code>react-icons</code> for <code>lucide-react</code>, thinking maybe Brave didn't like the old icon set.
+      I swapped out <code class="bg-zinc-100 p-1">react-icons</code> for <code class="bg-zinc-100 p-1">lucide-react</code>, thinking maybe Brave didn't like the old icon set. You know, new icons, new luck?
     </p>
-    <p>
-      Spoiler: no luck.
+    <p class="border-l-4 border-zinc-300 pl-4">
+      <b>Spoiler:</b> no luck.
     </p>
     <p>
       Clearly, this wasn't about icons anymore. This was personal.
     </p>
 
-    <h2 class="text-xl font-semibold mt-10">Brave is Blocking My Files?</h2>
+    <h2 class="text-xl font-bold mt-10">Brave is Blocking My Files?</h2>
     <p>
       Then I noticed something odd in DevTools. The error trace pointed to a file named:
-      <code>ads.914af30a.js</code>
+      <code class="bg-zinc-100 p-1">ads.914af30a.js</code>
     </p>
     <p>
       The name. "ads"? Like, ads-ads?
     </p>
     <p>
-      Instant flashback: Brave hates anything that even smells like an ad. Could it be blocking my own JS chunks?
+      <b>Instant flashback:</b> Brave hates anything that even smells like an ad. Could it be blocking my own JS chunks?
     </p>
     <p>
-      So I popped open my <code>vite.config.ts</code> and told Vite:
+      So I popped open my <code class="bg-zinc-100 p-1">vite.config.ts</code> and told Vite:
     </p>
-    <pre class="bg-zinc-100 rounded p-4 text-sm overflow-x-auto"><code>
+    <blockquote class="border-l-4 border-zinc-300 pl-4 text-zinc-600">
+      "Hey buddy, let's name things like <b>cryptographic garbage</b> instead of triggering Brave's fight-or-flight."
+    </blockquote>
+    <p>Here's the config:</p>
+    <pre class="bg-zinc-100 rounded px-4 overflow-x-auto"><code>
 // vite.config.ts
-build: {
-  rollupOptions: {
-    output: {
-      chunkFileNames: 'assets/[hash].js',      // Dynamic chunks
-      entryFileNames: 'assets/[hash].js',      // Entry points
-      assetFileNames: 'assets/[hash][extname]' // Assets like CSS/images
+  build: {
+    rollupOptions: {
+      output: {
+        chunkFileNames: 'assets/[hash].js',      // Dynamic chunks
+        entryFileNames: 'assets/[hash].js',      // Entry points
+        assetFileNames: 'assets/[hash][extname]' // Assets like CSS/images
+      }
     }
   }
-}
-    </code></pre>
+      </code></pre>
     <p>
       This ensures Vite won't generate scary filenames like <code>ads.chunk.js</code>. Totally browser-friendly.
     </p>
     <p>
-      I rebuilt. Refreshed. And guess what? Still broken.
+      I rebuilt. Refreshed. And guess what?<br>
+      Still broken.
     </p>
 
-    <h2 class="text-xl font-semibold mt-10">The Plot Twist I Didn't See Coming</h2>
+    <h2 class="text-xl font-bold mt-10">The Plot Twist I Didn't See Coming</h2>
     <p>
       Out of desperation, I clicked the error trace again — this time determined to follow every breadcrumb. I expanded the stack trace in DevTools, expecting to see something from my source files.
     </p>
@@ -132,35 +186,37 @@ build: {
       Hold up. CSS Peeper?
     </p>
     <p>
-      That's a Chrome/Brave extension I use to peek at styles. Apparently, it injects its own React app into every webpage like it owns the place. And that app... was crashing.
+      That's a Chrome/Brave extension I use to peek at styles. Apparently, it injects its own React app into every webpage like it owns the place.<br>
+      And that app... was crashing.
     </p>
     <p>
       Let me repeat:
     </p>
-    <blockquote class="italic text-zinc-700">
-      I had been debugging someone else's React crash.  
+    <blockquote class="border-l-4 border-zinc-300 pl-4 text-zinc-700">
+      I had been debugging <em>someone else's</em> React crash.  
       <br>For. Eight. Hours.
     </blockquote>
 
-    <h2 class="text-xl font-semibold mt-10">The Real Villain Was Installed in My Browser All Along</h2>
+    <h2 class="text-xl font-bold mt-10">The Real Villain Was Installed in My Browser All Along</h2>
     <p>
       Here's what was really happening:
     </p>
-    <ul class="list-disc ml-6">
-      <li>CSS Peeper injects a React UI into every page</li>
-      <li>It loads a script named something like <code>ads.something.js</code></li>
-      <li>That script broke</li>
+    <ul class="list-disc ml-6 space-y-3">
+      <li>CSS Peeper injects its own React-powered UI into every webpage</li>
+      <li>It loads a script called something like <code class="bg-zinc-100 p-1">ads.something.js</code> (coincidence? I think not.)</li>
+      <li>That script broke. Probably missing an icon or internal dependency</li>
       <li>React saw the crash and yelled</li>
-      <li>Console blamed my app</li>
-      <li>Brave possibly blocked it harder because of the "ads" name</li>
+      <li>But the console blamed my app</li>
+      <li>To make things worse, Brave saw the filename <code class="bg-zinc-100 p-1">ads.[hash].js</code> and probably flagged or throttled it due to its aggressive ad-blocking rules — even though it wasn't an actual ad.</li>
     </ul>
+    <p><b>Plot twist:</b> I wasn't the villain. I was just collateral damage.</p>
 
-    <h2 class="text-xl font-semibold mt-10">The Fix (That Took Me 5 Seconds... After 8 Hours)</h2>
+    <h2 class="text-xl font-bold mt-10">The Fix (That Took Me 5 Seconds... After 8 Hours)</h2>
     <p>
       The fix? Comically simple:
     </p>
-    <ol class="list-decimal ml-6">
-      <li>Open <code>brave://extensions</code></li>
+    <ol class="list-decimal ml-8">
+      <li>Open <code class="bg-zinc-100 p-1">brave://extensions</code></li>
       <li>Turn off CSS Peeper</li>
       <li>Reload the page</li>
     </ol>
@@ -169,26 +225,46 @@ build: {
       Icons? Back. Text? Back. Me? Slightly traumatized.
     </p>
 
-    <h2 class="text-xl font-semibold mt-10">What I Learned (So You Don't Lose a Day Like Me)</h2>
-    <ul class="list-disc ml-6">
-      <li><strong>Test in Incognito Mode First</strong> – No extensions = fewer surprises.</li>
-      <li><strong>Minified Errors Are Gaslighting You</strong> – Use dev mode for real errors: <code>npm run dev</code></li>
-      <li><strong>Be Careful With File Names</strong> – Avoid words like <code>ads</code>, <code>sponsor</code>, etc.</li>
-      <li><strong>Double-Check Icon Imports</strong> – Ensure imports aren't undefined.</li>
-      <li><strong>Look for "content script" in DevTools</strong> – It’s probably an extension crash.</li>
+    <h2 class="text-xl font-bold mt-10">What I Learned (So You Don't Lose a Day Like Me)</h2>
+    <ul class="list-disc ml-6 space-y-3">
+      <li>
+        <strong>Test in Incognito Mode First</strong>
+        <p class="mt-2 text-zinc-600">No extensions = no hijinks. This should be your first debugging step when things get weird.</p>
+      </li>
+      <li>
+        <strong>Minified Errors Are Gaslighting You</strong>
+        <p class="mt-2 text-zinc-600">Use dev mode for real errors: <code class="bg-zinc-100 p-1">npm run dev</code></p>
+        <p class="text-zinc-600">React will be way more helpful when it's not trying to save bytes.</p>
+      </li>
+      <li>
+        <strong>Be Careful With File Names</strong>
+        <p class="mt-2 text-zinc-600">Browsers like Brave can block:</p>
+        <p class="mt-3 text-zinc-600"> - JS/CSS files named <code class="bg-zinc-100 p-1">ads.js</code>, <code class="bg-zinc-100 p-1">sponsor.css</code>, etc.</p>
+        <p class="text-zinc-600"> - DOM elements with classes like <code class="bg-zinc-100 p-1">.ad-banner</code></p>
+        <p class="text-zinc-600 mt-3">Even if they're not ads. So avoid those terms when naming stuff.</p>
+      </li>
+      <li>
+        <strong>Double-Check Icon Imports</strong>
+        <p class="mt-2 text-zinc-600">My imports were fine, but always verify</p>
+        <pre class="bg-zinc-100 rounded px-4 font-semibold overflow-x-auto mt-4"><code>
+import { ChevronLeft } from 'lucide-react';
+console.log(ChevronLeft); // Should not be undefined
+        </code></pre>
+      </li>
+      <li><strong>Look for "content script" in DevTools</strong>
+        <p class="mt-2 text-zinc-600">If you see "content script" or an extension name in the error stack, it's probably not your fault.</p>
+      </li>
     </ul>
 
     <h2 class="text-xl font-semibold mt-10">TL;DR</h2>
     <p>
-      Seeing React error #130 in Brave? Icons or text gone missing?
-    </p>
-    <p>
+      Seeing <code class="bg-zinc-100 p-1">React error #130</code> in Brave? Icons or text gone missing? <br>
       Before you nuke your app:
     </p>
     <ul class="list-disc ml-6">
-      <li>Try Incognito mode</li>
-      <li>Check if any extensions are crashing</li>
-      <li>Avoid ad-looking file names</li>
+      <li>Try <b>Incognito mode</b></li>
+      <li>Check if any <b>extensions</b> are crashing</li>
+      <li>Avoid ad-looking <b>file names</b></li>
     </ul>
     <p>
       Sometimes the real bug lives rent-free in your browser.

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhijeet's Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-white text-zinc-800 font-jetbrains">
+  <div class="min-h-screen flex justify-center px-4 sm:px-6 lg:px-8 py-12">
+    <div class="w-full max-w-3xl">
+
+      <!-- Header -->
+      <header class="flex flex-col sm:flex-row justify-between items-center mb-10">
+        <h1 class="text-4xl font-bold">Abhijeet's Blog</h1>
+        <nav class="flex gap-6 mt-4 sm:mt-0 text-md font-medium">
+          <a href="/index.html" class="social-link transition duration-300">Home</a>
+          <a href="#" class="social-link transition duration-300">Blogs</a>
+        </nav>
+      </header>
+
+      <hr class="border-zinc-300 mb-10" />
+
+      <!-- Blog Section -->
+      <section class="space-y-8 text-lg leading-relaxed">
+        <article class="space-y-1">
+          <div class="flex justify-between items-center">
+            <a href="/blogs/react-error-130-not-my-bug.html" class="text-black hover:underline text-xl font-semibold">
+              Debug log: Error #130 
+            </a>
+            <time class="text-[13px] text-zinc-400" datetime="2025-06-27">27 June 2025</time>
+          </div>
+          <p class="text-[14px] text-zinc-500">
+            A dive into error #130 — why it happens, and how I fixed it.
+          </p>
+        </article>
+      </section>
+
+      <hr class="border-zinc-300 my-10" />
+
+    </div>
+  </div>
+</body>
+</html>
